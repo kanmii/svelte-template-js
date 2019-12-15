@@ -7,9 +7,10 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
-  "plugins": ["svelte3"],
+  "plugins": ["svelte3", "jest"],
   "overrides": [
     {
       "files": ["**/*.svelte"],

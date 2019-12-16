@@ -1,17 +1,23 @@
 {
   "name": "svelte-app",
   "version": "1.0.0",
+  "license":"MIT",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
     "start": "sirv public",
     "test": "jest --runInBand",
     "test:w": "yarn test --watch",
-    "test:c": "yarn test --coverage"
+    "test:c": "yarn test --coverage",
+    "autobuild": "rollup -c -w",
+    "dev": "run-p start:dev autobuild",
+    "start:dev": "sirv public --dev",
+    "type-check": "tsc --noEmit --project ."
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
+    "@babel/preset-typescript": "^7.7.4",
+    "@rollup/plugin-typescript": "^2.0.1",
     "@testing-library/svelte": "^1.11.0",
     "@types/jest": "^24.0.23",
     "@typescript-eslint/eslint-plugin": "^2.11.0",
@@ -22,7 +28,9 @@
     "eslint-plugin-jest": "^23.1.1",
     "eslint-plugin-svelte3": "^2.7.3",
     "jest": "^24.9.0",
+    "jest-environment-jsdom-fourteen": "^1.0.1",
     "jest-transform-svelte": "^2.1.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "prettier-plugin-svelte": "^0.7.0",
     "rollup": "^1.12.0",
@@ -31,7 +39,10 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
-    "svelte": "3.15.0"
+    "svelte": "3.15.0",
+    "svelte-preprocess": "^3.2.6",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.3"
   },
   "dependencies": {
     "sirv-cli": "^0.4.4"

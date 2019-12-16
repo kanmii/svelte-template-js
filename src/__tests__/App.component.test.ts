@@ -1,4 +1,3 @@
-// @ts-check
 import { render } from "@testing-library/svelte";
 import App from "../App.svelte";
 
@@ -7,7 +6,7 @@ test("it renders component", () => {
     props: { name: "me" }
   });
 
-  const domMain = document.getElementById("app-main");
+  const domMain = document.getElementById("app-main") as HTMLElement;
   expect(domMain.textContent).toBe("Hello me");
 });
 

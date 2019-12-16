@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNEXT",
+    "module": "ESNEXT",
+    "strict": true,
+    "moduleResolution": "node",
+    "types": ["svelte", "jest"],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "outDir": "myOutDir"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "public", "config", ".cache"]
+}

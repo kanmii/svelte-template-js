@@ -6,8 +6,7 @@
   ],
   "parserOptions": {
     "ecmaVersion": 2019,
-    "sourceType": "module",
-    "extraFileExtensions": [".svelte"]
+    "sourceType": "module"
   },
   "env": {
     "es6": true,
@@ -15,7 +14,7 @@
     "node": true,
     "jest/globals": true
   },
-  "plugins": ["svelte3", "jest", "@typescript-eslint"],
+  "plugins": ["svelte3", "jest"],
   "overrides": [
     {
       "files": ["**/*.svelte"],
@@ -25,6 +24,13 @@
   "rules": {
     "no-cond-assign": 0,
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-this-alias": "off"
+    "@typescript-eslint/no-this-alias": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": true
+      }
+    ]
   }
 }
